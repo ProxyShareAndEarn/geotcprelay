@@ -3,9 +3,13 @@ import threading
 import random
 import logging
 import struct
-from socks5 import Socks5Server, Socks5Client, DataExchanger
-from authservice import AuthService
-import select
+
+import sys
+sys.path.append("../")
+
+from common.socks5 import Socks5Server, Socks5Client
+from common.network import DataExchanger
+from common.authservice import AuthService
 
 # Configurazione del logging
 logging.basicConfig(filename='geotcprelay.log', level=logging.INFO, 
